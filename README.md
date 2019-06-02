@@ -31,7 +31,7 @@ hello mkdocs
 
 This plugin just make a json file that contains meta data "tags".
 To display aggregation of tag, you need to make pages referencing the json file.  
-There is example custom theme at [repo]().
+There is example custom theme at [repo](https://github.com/srymh/MkdocsTagPlugin).
 You can use this.
 
 make tagpages markdown file
