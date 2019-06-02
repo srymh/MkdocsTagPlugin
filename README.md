@@ -1,5 +1,7 @@
 # mdoctag
 
+demo page: https://srymh.github.io/mdoctag-demo/
+
 ## Get Started
 
 ``` bash
@@ -7,9 +9,10 @@ $ pipenv install mkdocs
 $ pipenv install git+https://github.com/srymh/MkdocsTagPlugin.git#egg=mdoctag
 ```
 
-add mdoctag to plugins
+add mdoctag to plugins and site_url
 
 ``` yaml
+site_url: https://abc.com/
 plugins:
     - mdoctag
 ```
