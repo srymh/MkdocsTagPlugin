@@ -3,7 +3,7 @@ from mkdocs.config.config_options import Type
 from mkdocs.utils import string_types
 import os
 import json
-
+import urllib.parse
 
 def _extract_meta(meta_data, data_name):
     if data_name in meta_data:
@@ -12,11 +12,15 @@ def _extract_meta(meta_data, data_name):
         return []
 
 
-def _retrievetags(page):
+def _retrievetags(page, config):
+    if config['site_url'] is None:
+        url = '/' + page.file.url
+    else:
+        url = urllib.parse.urljoin(config['site_url'], page.file.url)
     data = {
         'title': page.title,
         'file_name': page.file.name,
-        'url': '/' + page.file.url,
+        'url': url,
         'tags': _extract_meta(page.meta, 'tags'),
         'description': _extract_meta(page.meta, 'description')
     }
@@ -51,7 +55,7 @@ class TagPlugin(BasePlugin):
         config = kwargs.get('config')
         page = kwargs.get('page')
 
-        data = _retrievetags(page)
+        data = _retrievetags(page, config)
         filepath = os.path.join(
             config['site_dir'], self.config['data_filename'])
         _add_data_to(filepath, data)
