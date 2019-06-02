@@ -1,0 +1,16 @@
+<div id="mdoctag-tag-page-list"></div>
+<script>
+var req = new XMLHttpRequest();
+req.open("GET", "{{ base_url + '/' + config.plugins['mdoctag'].config['data_filename'] }}", false);
+req.send(null);
+var data = JSON.parse(req.responseText);
+console.log(data);
+html = '<ul>';
+data.forEach(el => {
+    html += '<li><a href="' + el.url
+    html += '">' + el.title
+    html += '</a></li>'
+});
+html += '</ul>';
+document.getElementById('mdoctag-tag-page-list').innerHTML = html;
+</script>
