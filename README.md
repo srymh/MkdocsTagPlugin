@@ -2,6 +2,11 @@
 
 ## Get Started
 
+``` bash
+$ pipenv install mkdocs
+$ pipenv install git+https://github.com/srymh/MkdocsTagPlugin.git#egg=mdoctag
+```
+
 add mdoctag to plugins
 
 ``` yaml
