@@ -1,6 +1,6 @@
 from mkdocs.plugins import BasePlugin
 from mkdocs.config.config_options import Type
-from mkdocs.utils import string_types
+# from mkdocs.utils import string_types // Deprecated
 import os
 import json
 import urllib.parse
@@ -47,8 +47,8 @@ def _add_data_to(filepath, additional_data):
 
 class TagPlugin(BasePlugin):
     config_scheme = (
-        ('tagpage_dir', Type(string_types, default='tags')),
-        ('data_filename', Type(string_types, default='tags.json'))
+        ('tagpage_dir', Type(str, default='tags')),
+        ('data_filename', Type(str, default='tags.json'))
     )
 
     def on_page_markdown(self, markdown, **kwargs):
