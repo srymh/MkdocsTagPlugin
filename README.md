@@ -1,3 +1,7 @@
+> [!NOTE]
+> [Material for MkDocs has entered maintenance mode.](https://squidfunk.github.io/mkdocs-material/blog/)
+> Migrate to [Zensical](https://zensical.org/).
+
 # mdoctag
 
 demo page: https://srymh.github.io/mdoctag-demo/
